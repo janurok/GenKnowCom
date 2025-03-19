@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Competency: วิตามินสำหรับอาชีพของคุณ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --vitamin-a: #ff9f43;
+            --vitamin-c: #10b981;
+            --vitamin-n: #3b82f6;
+            --vitamin-ca: #8b5cf6;
+            --vitamin-d: #f43f5e;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--primary-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03), 0 6px 12px rgba(0,0,0,0.02);
+            padding: 40px;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.03);
+        }
+        
+        .vitamins-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .vitamin {
+            aspect-ratio: 1;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            padding: 20px;
+        }
+        
+        .vitamin::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+            z-index: 1;
+        }
+        
+        .vitamin:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+        
+        .vitamin-name {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vitamin-desc {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .vitamin-a { background: linear-gradient(135deg, var(--vitamin-a), #f97316); }
+        .vitamin-c { background: linear-gradient(135deg, var(--vitamin-c), #059669); }
+        .vitamin-n { background: linear-gradient(135deg, var(--vitamin-n), #2563eb); }
+        .vitamin-ca { background: linear-gradient(135deg, var(--vitamin-ca), #7c3aed); }
+        .vitamin-d { background: linear-gradient(135deg, var(--vitamin-d), #e11d48); }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .benefits {
+            margin: 40px 0;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .benefit-item {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative;
+            padding-left: 25px;
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 30px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table th {
+            background-color: #f1f5f9;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .comparison-table td {
+            padding: 16px;
+            background-color: var(--card-bg);
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .vitamin-cell {
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 8px 12px !important;
+            text-align: center;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 60px 0 30px;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .cta-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .cta-feature {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+        }
+        
+        .feature-icon {
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .feature-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary-color), #818cf8);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            margin-top: 20px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(99, 102, 241, 0.4);
+        }
+        
+        .qr-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .qr-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-right: 20px;
+        }
+        
+        .qr-text {
+            text-align: left;
+            max-width: 200px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .vitamins-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .benefits-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .qr-container {
+                flex-direction: column;
+            }
+            
+            .qr-placeholder {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>General Competency: วิตามินสำหรับอาชีพของคุณ</h1>
+            <div class="subtitle">ทักษะพื้นฐานที่จำเป็นสำหรับพนักงานทุกคน เหมือนวิตามินที่ร่างกายต้องการทุกวัน เพื่อการทำงานที่มีประสิทธิภาพสูงสุด</div>
+        </header>
+        
+        <div class="card">
+            <div class="vitamins-container">
+                <div class="vitamin vitamin-a">
+                    <div class="vitamin-name">A</div>
+                    <div class="vitamin-desc">การวิเคราะห์และตีความข้อมูล</div>
+                </div>
+                <div class="vitamin vitamin-c">
+                    <div class="vitamin-name">C</div>
+                    <div class="vitamin-desc">การสื่อสาร</div>
+                </div>
+                <div class="vitamin vitamin-n">
+                    <div class="vitamin-name">N</div>
+                    <div class="vitamin-desc">การเจรจาต่อรอง</div>
+                </div>
+                <div class="vitamin vitamin-ca">
+                    <div class="vitamin-name">Ca</div>
+                    <div class="vitamin-desc">การสร้างเครือข่าย</div>
+                </div>
+                <div class="vitamin vitamin-d">
+                    <div class="vitamin-name">D</div>
+                    <div class="vitamin-desc">ความรู้ดิจิทัล</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits">
+            <h3 class="section-title">ทำไมเราเปรียบ General Competency เหมือนวิตามิน?</h3>
+            <ul class="benefits-list">
+                <li class="benefit-item">
+                    <strong>จำเป็นสำหรับทุกคน</strong> - เหมือนที่ร่างกายทุกคนต้องการวิตามินพื้นฐานชุดเดียวกัน
+                </li>
+                <li class="benefit-item">
+                    <strong>ต้องได้รับอย่างสม่ำเสมอ</strong> - ทักษะเหล่านี้ต้องพัฒนาอย่างต่อเนื่อง
+                </li>
+                <li class="benefit-item">
+                    <strong>ขาดไม่ได้</strong> - การขาดทักษะพื้นฐานเหล่านี้ทำให้ทำงานได้ไม่เต็มประสิทธิภาพ
+                </li>
+                <li class="benefit-item">
+                    <strong>ช่วยเสริม Functional Competency</strong> - วิตามินช่วยให้ระบบต่างๆ ทำงานได้ดีขึ้น เช่นเดียวกับทักษะพื้นฐานช่วยเสริมทักษะเฉพาะทาง
+                </li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3 class="section-title">เปรียบเทียบ General Competency กับวิตามิน</h3>
+            <table class="comparison-table">
+                <tr>
+                    <th>วิตามิน</th>
+                    <th>General Competency</th>
+                    <th>ประโยชน์</th>
+                </tr>
+                <tr>
+                    <td class="vitamin-cell" style="background: linear-gradient(135deg, var(--vitamin-a), #f97316);">วิตามิน A</td>
+                    <td>การวิเคราะห์และตีความข้อมูล</td>
+                    <td>ช่วยให้มองเห็นแนวโน้มและโอกาสในข้อมูลการทำงาน</td>
+                </tr>
+                <tr>
+                    <td class="vitamin-cell" style="background: linear-gradient(135deg, var(--vitamin-c), #059669);">วิตามิน C</td>
+                    <td>การสื่อสาร</td>
+                    <td>เสริมภูมิคุ้มกันจากความเข้าใจผิดและความขัดแย้ง</td>
+                </tr>
+                <tr>
+                    <td class="vitamin-cell" style="background: linear-gradient(135deg, var(--vitamin-n), #2563eb);">วิตามิน N</td>
+                    <td>การเจรจาต่อรอง</td>
+                    <td>ช่วยให้หาทางออกที่ทุกฝ่ายได้ประโยชน์</td>
+                </tr>
+                <tr>
+                    <td class="vitamin-cell" style="background: linear-gradient(135deg, var(--vitamin-ca), #7c3aed);">แคลเซียม</td>
+                    <td>การสร้างเครือข่าย</td>
+                    <td>สร้างความแข็งแกร่งให้ความสัมพันธ์ในที่ทำงาน</td>
+                </tr>
+                <tr>
+                    <td class="vitamin-cell" style="background: linear-gradient(135deg, var(--vitamin-d), #e11d48);">วิตามิน D</td>
+                    <td>ความรู้ดิจิทัล</td>
+                    <td>ช่วยให้ใช้เทคโนโลยีได้อย่างมีประสิทธิภาพ</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="cta-section">
+            <h3 class="section-title" style="margin-bottom: 15px;">หลักสูตรฝึกอบรมของเรา คือ "ชุดวิตามินทักษะ" ที่องค์กรจัดเตรียมเพื่อพนักงานทุกคน</h3>
+            
+            <div class="cta-features">
+                <div class="cta-feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">หลักสูตรเน้นการฝึกปฏิบัติจริง เกี่ยวข้องกับงานในอุตสาหกรรมปิโตรเคมี</div>
+                </div>
+                <div class="cta-feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">วิทยากรมีประสบการณ์ตรงจากอุตสาหกรรมของเรา</div>
+                </div>
+                <div class="cta-feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">ระยะเวลาการอบรมกระชับ ไม่กระทบงานประจำ</div>
+                </div>
+                <div class="cta-feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-text">ช่วยเพิ่มโอกาสในการเติบโตในสายอาชีพของคุณ</div>
+                </div>
+            </div>
+            
+            <button class="cta-button">ลงทะเบียนเรียนรู้ทักษะพื้นฐานที่จำเป็น</button>
+            
+            <div class="qr-container">
+                <div class="qr-placeholder">
+                    QR Code
+                </div>
+                <div class="qr-text">
+                    สแกน QR Code เพื่อดูรายละเอียดหลักสูตรและลงทะเบียนเข้าร่วมการอบรม
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
