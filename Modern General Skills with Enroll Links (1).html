@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Skills & Knowledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    :root {
+      --primary: #6366f1;
+      --primary-light: #818cf8;
+      --primary-dark: #4f46e5;
+      --secondary: #06b6d4;
+      --secondary-light: #22d3ee;
+      --accent: #8b5cf6;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --black: #020617;
+      --white: #ffffff;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-tertiary: #f1f5f9;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-tertiary: #94a3b8;
+      --border-light: #e2e8f0;
+      
+      --border-radius-sm: 0.25rem;
+      --border-radius-md: 0.75rem;
+      --border-radius-lg: 1.5rem;
+      --border-radius-full: 9999px;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      --spacing-1: 0.25rem;
+      --spacing-2: 0.5rem;
+      --spacing-3: 0.75rem;
+      --spacing-4: 1rem;
+      --spacing-6: 1.5rem;
+      --spacing-8: 2rem;
+      --spacing-12: 3rem;
+      --spacing-16: 4rem;
+      
+      --transition-all: all 0.3s ease;
+    }
+    
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--spacing-8) var(--spacing-4);
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: var(--spacing-6) var(--spacing-4);
+      }
+    }
+    
+    /* Header & Navbar */
+    .header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+      color: var(--white);
+      padding: var(--spacing-12) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://placehold.co/1200x400/6366f1/ffffff?text=Skills+%26+Knowledge') center/cover no-repeat;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-4);
+      color: var(--white);
+    }
+    
+    .header p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto var(--spacing-8);
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* Cards */
+    .card {
+      background-color: var(--bg-primary);
+      border-radius: var(--border-radius-lg);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: var(--spacing-8);
+      overflow: hidden;
+      transition: var(--transition-all);
+      border: 1px solid var(--border-light);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    
+    .card-header {
+      padding: var(--spacing-6);
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      color: var(--white);
+    }
+    
+    .card-body {
+      padding: var(--spacing-6);
+    }
+    
+    /* Section Titles */
+    h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: var(--spacing-6);
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: var(--border-radius-full);
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: var(--spacing-4);
+      padding-left: var(--spacing-4);
+      border-left: 4px solid var(--primary);
+    }
+    
+    /* Skill Grid */
+    .skill-section {
+      margin: var(--spacing-12) 0;
+    }
+    
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--spacing-6);
+      margin: var(--spacing-8) 0;
+    }
+    
+    .skill-card {
+      background-color: var(--bg-primary);
+      border-radius: var(--border-radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-all);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      z-index: 1;
+    }
+    
+    .skill-card-content {
+      padding: var(--spacing-6);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .skill-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: var(--border-radius-full);
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-bottom: var(--spacing-4);
+      box-shadow: var(--shadow-md);
+    }
+    
+    .skill-card h4 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-2);
+      color: var(--primary-dark);
+    }
+    
+    .skill-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    /* Course Tables */
+    .course-section {
+      margin: var(--spacing-12) 0;
+    }
+    
+    .course-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--spacing-6);
+    }
+    
+    .course-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--border-radius-full);
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: var(--white);
+      font-size: 1.25rem;
+      margin-right: var(--spacing-4);
+    }
+    
+    .course-table-container {
+      overflow-x: auto;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-md);
+      background-color: var(--bg-primary);
+      margin-top: var(--spacing-4);
+    }
+    
+    .course-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    
+    .course-table th {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      text-align: left;
+      padding: var(--spacing-4);
+      font-weight: 500;
+      position: relative;
+    }
+    
+    .course-table th:first-child {
+      border-top-left-radius: var(--border-radius-md);
+    }
+    
+    .course-table th:last-child {
+      border-top-right-radius: var(--border-radius-md);
+    }
+    
+    .course-table td {
+      padding: var(--spacing-4);
+      border-bottom: 1px solid var(--border-light);
+      background-color: var(--bg-primary);
+      transition: var(--transition-all);
+    }
+    
+    .course-table tr:hover td {
+      background-color: var(--bg-tertiary);
+    }
+    
+    .course-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .course-table tr:last-child td:first-child {
+      border-bottom-left-radius: var(--border-radius-md);
+    }
+    
+    .course-table tr:last-child td:last-child {
+      border-bottom-right-radius: var(--border-radius-md);
+    }
+    
+    /* Badges & Buttons */
+    .level-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--border-radius-full);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: white;
+    }
+    
+    .level-badge-2 {
+      background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+    }
+    
+    .level-badge-4 {
+      background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+    }
+    
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-2);
+      padding: 0.4rem 0.8rem;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius-md);
+      font-weight: 500;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      transition: var(--transition-all);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+      transition: var(--transition-all);
+      z-index: -1;
+    }
+    
+    .button:hover::before {
+      left: 0;
+    }
+    
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+    
+    /* Benefits Section */
+    .benefits-section {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+      color: var(--white);
+      padding: var(--spacing-12) 0;
+      border-radius: var(--border-radius-lg);
+      margin: var(--spacing-12) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .benefits-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://placehold.co/1200x400/6366f1/ffffff?text=Benefits') center/cover no-repeat;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .benefits-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 var(--spacing-6);
+    }
+    
+    .benefits-section h2 {
+      color: var(--white);
+      text-align: center;
+      margin-bottom: var(--spacing-8);
+    }
+    
+    .benefits-section h2::after {
+      background: var(--white);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-6);
+    }
+    
+    .benefit-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: var(--border-radius-md);
+      padding: var(--spacing-6);
+      transition: var(--transition-all);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+    
+    .benefit-icon {
+      font-size: 2rem;
+      margin-bottom: var(--spacing-4);
+      color: var(--white);
+      opacity: 0.9;
+    }
+    
+    .benefit-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: var(--spacing-2);
+      font-weight: 600;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--black);
+      color: var(--white);
+      padding: var(--spacing-12) 0 var(--spacing-6);
+      text-align: center;
+      margin-top: var(--spacing-16);
+    }
+    
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .footer p {
+      color: var(--text-tertiary);
+      font-size: 0.9rem;
+      margin-top: var(--spacing-4);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .skill-grid, .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+      }
+      
+      h3 {
+        font-size: 1.25rem;
+      }
+      
+      .course-table {
+        font-size: 0.85rem;
+      }
+      
+      .course-table td, .course-table th {
+        padding: var(--spacing-3);
+      }
+    }
+
+    /* Animation for cards */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-card {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.1s; }
+    .skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>General Knowledge & Skills</h1>
+                <p>เสริมสร้างทักษะพื้นฐานที่จำเป็นสำหรับการทำงานในยุคดิจิทัล เพื่อความสำเร็จในเส้นทางอาชีพของคุณ</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Intro Section -->
+        <section class="skill-section">
+            <h2>ทักษะพื้นฐานสำหรับความสำเร็จ</h2>
+            <p>ทักษะและความรู้ทั่วไปเป็นสมรรถนะพื้นฐานที่จำเป็นสำหรับการทำงานในทุกสายอาชีพ ช่วยให้คุณสามารถทำงานได้อย่างมีประสิทธิภาพและสร้างความก้าวหน้าในอาชีพ</p>
+            
+            <div class="skill-grid">
+                <div class="skill-card animate-card">
+                    <div class="skill-card-content">
+                        <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
+                        <h4>Analyzing & Interpretation</h4>
+                        <p>ทักษะการวิเคราะห์และตีความข้อมูล ช่วยให้คุณสามารถประมวลผลข้อมูลจำนวนมาก แปลงเป็นข้อมูลเชิงลึกที่มีความหมาย และสร้างรายงานที่มีประสิทธิภาพ</p>
+                    </div>
+                </div>
+                <div class="skill-card animate-card">
+                    <div class="skill-card-content">
+                        <div class="skill-icon"><i class="fas fa-comments"></i></div>
+                        <h4>Communication</h4>
+                        <p>ทักษะการสื่อสารที่มีประสิทธิภาพทั้งภายในและภายนอกองค์กร รวมถึงการนำเสนอข้อมูล การเล่าเรื่อง และการสร้างงานนำเสนอที่น่าสนใจ</p>
+                    </div>
+                </div>
+                <div class="skill-card animate-card">
+                    <div class="skill-card-content">
+                        <div class="skill-icon"><i class="fas fa-handshake"></i></div>
+                        <h4>Negotiation</h4>
+                        <p>ทักษะการเจรจาต่อรองทางธุรกิจช่วยให้คุณสามารถบรรลุข้อตกลงที่เป็นประโยชน์ร่วมกัน สร้างความสัมพันธ์ที่แข็งแกร่ง และแก้ไขความขัดแย้งอย่างมีประสิทธิภาพ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Course Sections -->
+        <section class="course-section">
+            <div class="course-header">
+                <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>1. หลักสูตรสำหรับ Analyzing & Interpretation</h3>
+            </div>
+            <div class="course-table-container">
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>รหัสหลักสูตร</th>
+                            <th>ชื่อหลักสูตร</th>
+                            <th>ระดับ</th>
+                            <th>กลุ่มเป้าหมาย</th>
+                            <th>วันที่จัดอบรม</th>
+                            <th>ระยะเวลา</th>
+                            <th>ราคา</th>
+                            <th>ลงทะเบียน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COET249-1</td>
+                            <td>Business Intelligence with Power BI: สร้างรายงานธุรกิจอัจฉริยะ</td>
+                            <td><span class="level-badge level-badge-4">Level 4 (Mastery)</span></td>
+                            <td>Digital</td>
+                            <td>7-8 พ.ค. 2568</td>
+                            <td>2 วัน</td>
+                            <td>฿9,000</td>
+                            <td><a href="https://forms.gle/enroll-COET249-1" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET249-2</td>
+                            <td>Business Intelligence with Power BI: สร้างรายงานธุรกิจอัจฉริยะ</td>
+                            <td><span class="level-badge level-badge-4">Level 4 (Mastery)</span></td>
+                            <td>Digital</td>
+                            <td>9-10 ก.ย. 2568</td>
+                            <td>2 วัน</td>
+                            <td>฿9,000</td>
+                            <td><a href="https://scgc-startdi.scg.com/class/2547/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET2360-6</td>
+                            <td>Excel เพื่อการวิเคราะห์ข้อมูลธุรกิจ: จากข้อมูลสู่การตัดสินใจ</td>
+                            <td><span class="level-badge level-badge-2">Level 2 (Growth)</span></td>
+                            <td>Digital</td>
+                            <td>17 ก.ค. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿6,000</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/45/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="course-section">
+            <div class="course-header">
+                <div class="course-icon"><i class="fas fa-comment-dots"></i></div>
+                <h3>2. หลักสูตรสำหรับ Communication</h3>
+            </div>
+            <div class="course-table-container">
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>รหัสหลักสูตร</th>
+                            <th>ชื่อหลักสูตร</th>
+                            <th>ระดับ</th>
+                            <th>กลุ่มเป้าหมาย</th>
+                            <th>วันที่จัดอบรม</th>
+                            <th>ระยะเวลา</th>
+                            <th>ราคา</th>
+                            <th>ลงทะเบียน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COET23139-7</td>
+                            <td>Business Storytelling เทคนิคการนำเสนอข้อมูลให้ตรงเป้าธุรกิจ</td>
+                            <td><span class="level-badge level-badge-2">Level 2 (Growth)</span></td>
+                            <td>All Job family</td>
+                            <td>23 ก.ย. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿7,500</td>
+                            <td><a href="https://scgc-startdi.scg.com/class/2553/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET23154-5</td>
+                            <td>PowerPoint for Business: สร้างงานนำเสนอระดับมืออาชีพ</td>
+                            <td><span class="level-badge level-badge-4">Level 4 (Mastery)</span></td>
+                            <td>All Job family</td>
+                            <td>17 มิ.ย. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿6,900</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/511/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET23154-6</td>
+                            <td>PowerPoint for Business: สร้างงานนำเสนอระดับมืออาชีพ</td>
+                            <td><span class="level-badge level-badge-4">Level 4 (Mastery)</span></td>
+                            <td>All Job family</td>
+                            <td>8 ต.ค. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿6,900</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/511/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET23143-5</td>
+                            <td>Strategic Business Communication: สื่อสารอย่างมีกลยุทธ์</td>
+                            <td><span class="level-badge level-badge-2">Level 2 (Growth)</span></td>
+                            <td>HROD/Admin</td>
+                            <td>11 มิ.ย. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿7,500</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/463/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                        <tr>
+                            <td>COET23143-6</td>
+                            <td>Strategic Business Communication: สื่อสารอย่างมีกลยุทธ์</td>
+                            <td><span class="level-badge level-badge-2">Level 2 (Growth)</span></td>
+                            <td>HROD/Admin</td>
+                            <td>11 พ.ย. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿7,500</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/463/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section class="course-section">
+            <div class="course-header">
+                <div class="course-icon"><i class="fas fa-handshake"></i></div>
+                <h3>3. หลักสูตรสำหรับ Negotiation</h3>
+            </div>
+            <div class="course-table-container">
+                <table class="course-table">
+                    <thead>
+                        <tr>
+                            <th>รหัสหลักสูตร</th>
+                            <th>ชื่อหลักสูตร</th>
+                            <th>ระดับ</th>
+                            <th>กลุ่มเป้าหมาย</th>
+                            <th>วันที่จัดอบรม</th>
+                            <th>ระยะเวลา</th>
+                            <th>ราคา</th>
+                            <th>ลงทะเบียน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>COET2337-6</td>
+                            <td>Business Negotiation Techniques: เทคนิคการเจรจาต่อรองทางธุรกิจ</td>
+                            <td><span class="level-badge level-badge-2">Level 2 (Growth)</span></td>
+                            <td>All Job family</td>
+                            <td>20 ส.ค. 2568</td>
+                            <td>1 วัน</td>
+                            <td>฿7,500</td>
+                            <td><a href="https://scgc-startdi.scg.com/class-program/97/?is_coniclex=false" class="button"><i class="fas fa-user-plus"></i> ลงทะเบียน</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="benefits-content">
+                <h2>ประโยชน์ของการพัฒนา General Skills</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-user-tie"></i></div>
+                        <h4>พัฒนาความก้าวหน้าในอาชีพ</h4>
+                        <p>เพิ่มโอกาสในการเลื่อนตำแหน่งและความก้าวหน้าในสายอาชีพด้วยทักษะที่เป็นที่ต้องการในตลาดงานปัจจุบัน</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h4>เพิ่มประสิทธิภาพการทำงาน</h4>
+                        <p>ทำงานได้อย่างมีประสิทธิภาพมากขึ้น ด้วยความสามารถในการวิเคราะห์ข้อมูล สื่อสาร และเจรจาต่อรองอย่างมืออาชีพ</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                        <h4>เสริมสร้างความร่วมมือ</h4>
+                        <p>สร้างความสัมพันธ์ที่ดีกับเพื่อนร่วมงาน ลูกค้า และพันธมิตรทางธุรกิจผ่านการสื่อสารและการเจรจาที่มีประสิทธิภาพ</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i class="fas fa-chart-bar"></i></div>
+                        <h4>ตัดสินใจจากข้อมูล</h4>
+                        <p>พัฒนาความสามารถในการวิเคราะห์ข้อมูลเพื่อการตัดสินใจที่ถูกต้อง แม่นยำ และสร้างผลลัพธ์ทางธุรกิจที่ดีขึ้น</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 style="border-left: none; color: var(--white);">General Knowledge & Skills</h3>
+                <p>© 2025 Organization Learning Management เสริมสร้างทักษะเพื่อความสำเร็จในการทำงาน</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+    // Simple animation for cards when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const animatedElements = document.querySelectorAll('.animate-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            setTimeout(() => {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    });
+    </script>
+</body>
+</html>
